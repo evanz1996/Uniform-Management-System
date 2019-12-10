@@ -1,0 +1,23 @@
+:root {
+  --main-grey: #555555;
+  --main-dark: #697689;
+}
+
+body {
+  font-family: "Poppins";
+  background: white;
+  color: black;
+  /* overflow-x: hidden; */
+}
+
+.navbar {
+  background: #192d4d;
+  size: 100rem;
+  font-family: "Poppins", sans-serif;
+  color: white !important;
+}
+
+.navbar-nav {
+  color: white;
+}
+
