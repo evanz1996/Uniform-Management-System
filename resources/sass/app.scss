@@ -1,11 +1,40 @@
 @import "_variable.scss";
 
 .navbar {
-    background: #192d4d;
+    background: #28334aff;
     size: 100rem;
     font-family: "Poppins", sans-serif;
-    color: white !important;
+    color: black !important;
 }
-.navbar-nav {
-    color: white;
+.about-us p {
+    padding-top: -120rem;
+}
+
+.about-image {
+    padding-top: 2rem;
+    height: 35rem;
+    width: 45rem;
+    margin-left: -13rem;
+}
+.about-image2 {
+    padding-top: 6rem;
+    margin-left: 2rem;
+    height: 33rem;
+    width: 20rem;
+}
+
+.about-title {
+    font-size: 4rem;
+    display: flex;
+    text-align: center;
+    margin-left: 18rem;
+}
+
+.about-who-are-we {
+    margin-left: 2rem;
+    height: 20rem;
+    width: 30rem;
+    border: 1px solid;
+    border-color: var(--main-dark);
+    border-radius: 1%;
 }
