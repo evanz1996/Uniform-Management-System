@@ -20,7 +20,7 @@ class About extends Component {
                     </div>
 
                     <div className="about-content ">
-                        <h1 className="about-title text-center">
+                        <h1 className="about-title text-center py-5">
                             Welcome to Unifo!
                         </h1>
                     </div>

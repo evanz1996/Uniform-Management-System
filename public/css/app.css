@@ -13,7 +13,7 @@
 }
 
 body {
-  font-family: "Poppins";
+  font-family: "Poppins", "Montserrat";
   background: var(--box-shadow);
   color: black;
   /* overflow-x: hidden; */
@@ -21,6 +21,26 @@ body {
 
 a {
   color: white;
+}
+
+.footer-class {
+  background: #28334aff;
+  color: white;
+}
+
+.footer-title {
+  font-size: x-large;
+}
+
+.footer-content {
+  font-style: normal;
+  font-size: small;
+  font-family: Montserrat;
+}
+
+.column {
+  float: left;
+  width: 25%;
 }
 
 .navbar {

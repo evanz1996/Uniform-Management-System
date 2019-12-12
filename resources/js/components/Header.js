@@ -21,22 +21,22 @@ class Header extends Component {
                             <ul className="nav justify-content">
                                 <li className="nav-item active">
                                     <Link className="navlink" to="/">
-                                        About Us &nbsp; &nbsp;
+                                        About Us
                                     </Link>
                                 </li>
                                 <li className="nav-item active">
                                     <Link className="navlink" to="/services">
-                                        Services &nbsp; &nbsp;
+                                        Services
                                     </Link>
                                 </li>
                                 <li className="nav-item">
                                     <Link className="navlink" to="/careers">
-                                        Career &nbsp; &nbsp;
+                                        Career
                                     </Link>
                                 </li>
                                 <li className="nav-item dropdown">
                                     <Link className="navlink" to="/products">
-                                        Products &nbsp; &nbsp;
+                                        Products
                                     </Link>
                                 </li>
                             </ul>
