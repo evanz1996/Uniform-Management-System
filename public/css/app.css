@@ -85,3 +85,37 @@ a {
   border-radius: 1%;
 }
 
+.service-title {
+  margin-top: 5rem;
+}
+
+.service-web-design {
+  height: 5rem;
+  width: 5rem;
+}
+
+.service-mobile {
+  height: 5rem;
+  width: 5rem;
+}
+
+.service-bootstrap {
+  height: 5.5rem;
+  width: 5.5rem;
+}
+
+.service-css {
+  height: 5rem;
+  width: 5rem;
+}
+
+.service-html {
+  height: 5rem;
+  width: 5rem;
+}
+
+.service-bug-fixing {
+  height: 5rem;
+  width: 5rem;
+}
+

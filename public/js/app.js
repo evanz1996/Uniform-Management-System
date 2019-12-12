@@ -55234,7 +55234,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "about-us container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "row"
+        className: "row"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "col-lg-6 "
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -55314,7 +55314,9 @@ function (_Component) {
   _createClass(Career, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello, I'm Career");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Ready to Step-up?"));
     }
   }]);
 
@@ -55465,7 +55467,7 @@ function (_Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "navbar navbar-expand-sm  fixed-top"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        "class": "container"
+        className: "container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "navbar-brand ",
         to: "/"
@@ -55502,14 +55504,6 @@ function (_Component) {
         exact: true,
         path: "/services",
         component: _components_Services_Services__WEBPACK_IMPORTED_MODULE_3__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-        exact: true,
-        path: "/careers",
-        component: _components_Career_Career__WEBPACK_IMPORTED_MODULE_4__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-        exact: true,
-        path: "/products",
-        component: _components_Products_Products__WEBPACK_IMPORTED_MODULE_5__["default"]
       }));
     }
   }]);
@@ -55648,12 +55642,11 @@ function (_Component) {
 /*!******************************************************!*\
   !*** ./resources/js/components/Services/Services.js ***!
   \******************************************************/
-/*! exports provided: Services, default */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Services", function() { return Services; });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
@@ -55675,6 +55668,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
+
 var Services =
 /*#__PURE__*/
 function (_Component) {
@@ -55689,12 +55683,85 @@ function (_Component) {
   _createClass(Services, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, "Hello, I'm Services");
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "Services"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container text-center w40"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
+        className: "service-title"
+      }, "We Offer"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We make it easy for you to order content from thousands of professional writers. See how our website content creation services can help you."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mx-auto heading-line"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-4 text-center "
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "service-web-design",
+        src: "/images/laptop2.png",
+        alt: "web-laptop"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-3"
+      }, " Web Design"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "pb-9"
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-4 text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "service-mobile",
+        src: "/images/phone2.png",
+        alt: "mobile"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-3"
+      }, " Mobile Design"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "pb-5"
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-4 text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "service-bootstrap",
+        src: "/images/bootstrap.png",
+        alt: "bootstrap"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-3"
+      }, " Bootsrap"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "pb-5"
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-4 text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "service-css",
+        src: "/images/Css.png",
+        alt: "Css"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-3"
+      }, " Web Design"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "pb-5"
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-4 text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "service-html",
+        src: "/images/html5.png",
+        alt: "html"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-3"
+      }, " Web Design"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "pb-5"
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-4 text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "service-bug-fixing",
+        src: "/images/bug-fixing.png",
+        alt: "bug-fixing"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-3"
+      }, " Web Design"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+        className: "pb-5"
+      }, "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s"))))));
     }
   }]);
 
   return Services;
 }(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+
 /* harmony default export */ __webpack_exports__["default"] = (Services);
 
 /***/ }),

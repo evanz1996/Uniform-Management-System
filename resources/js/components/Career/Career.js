@@ -2,7 +2,11 @@ import React, { Component } from "react";
 
 export class Career extends Component {
     render() {
-        return <div>Hello, I'm Career</div>;
+        return (
+            <div className="container">
+                <h1> Ready to Step-up?</h1>
+            </div>
+        );
     }
 }
 

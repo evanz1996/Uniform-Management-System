@@ -4,7 +4,7 @@ class About extends Component {
     render() {
         return (
             <div className="about-us container">
-                <div class="row">
+                <div className="row">
                     <div className="col-lg-6 ">
                         <img
                             src="/images/student-in-uniform.png"

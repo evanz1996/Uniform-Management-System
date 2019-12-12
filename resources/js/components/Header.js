@@ -10,7 +10,7 @@ class Header extends Component {
         return (
             <Router>
                 <nav className="navbar navbar-expand-sm  fixed-top">
-                    <div class="container">
+                    <div className="container">
                         <Link className="navbar-brand " to="/">
                             Unifo
                         </Link>
@@ -46,8 +46,8 @@ class Header extends Component {
 
                 <Route exact path="/" component={About} />
                 <Route exact path="/services" component={Services} />
-                <Route exact path="/careers" component={Career} />
-                <Route exact path="/products" component={Products} />
+                {/* <Route exact path="/careers" component={Career} />
+                <Route exact path="/products" component={Products} /> */}
             </Router>
         );
     }
