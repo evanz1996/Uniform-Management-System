@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import About from "../components/About/About";
 import Services from "../components/Services/Services";
-import Career from "../components/Career/Career";
+import Portfolio from "../components/Portfolio/Portfolio";
 import Products from "../components/Products/Products";
 
 class Header extends Component {
@@ -30,8 +30,8 @@ class Header extends Component {
                                     </Link>
                                 </li>
                                 <li className="nav-item">
-                                    <Link className="navlink" to="/careers">
-                                        Career &nbsp; &nbsp;
+                                    <Link className="navlink" to="/portfolio">
+                                        Portfolio &nbsp; &nbsp;
                                     </Link>
                                 </li>
                                 <li className="nav-item dropdown">
@@ -43,11 +43,10 @@ class Header extends Component {
                         </div>
                     </div>
                 </nav>
-
                 <Route exact path="/" component={About} />
                 <Route exact path="/services" component={Services} />
-                {/* <Route exact path="/careers" component={Career} />
-                <Route exact path="/products" component={Products} /> */}
+                <Route exact path="/portfolio" component={Portfolio} />
+                {/* <Route exact path="/products" component={Products} /> */}
             </Router>
         );
     }

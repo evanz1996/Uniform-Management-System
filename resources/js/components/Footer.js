@@ -4,7 +4,7 @@ export class Footer extends Component {
     render() {
         return (
             <div>
-                <div className="footer-class py-5">
+                <div className="footer-class py-5 container-fluid">
                     <div className="footer-title text-center py-2 ">Unifo</div>
                     <div className=" mx-auto"></div>
                     <div className="footer-content">

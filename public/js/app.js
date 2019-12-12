@@ -55269,63 +55269,6 @@ function (_Component) {
 
 /***/ }),
 
-/***/ "./resources/js/components/Career/Career.js":
-/*!**************************************************!*\
-  !*** ./resources/js/components/Career/Career.js ***!
-  \**************************************************/
-/*! exports provided: Career, default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Career", function() { return Career; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-var Career =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(Career, _Component);
-
-  function Career() {
-    _classCallCheck(this, Career);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(Career).apply(this, arguments));
-  }
-
-  _createClass(Career, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, " Ready to Step-up?"));
-    }
-  }]);
-
-  return Career;
-}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
-/* harmony default export */ __webpack_exports__["default"] = (Career);
-
-/***/ }),
-
 /***/ "./resources/js/components/Footer.js":
 /*!*******************************************!*\
   !*** ./resources/js/components/Footer.js ***!
@@ -55372,7 +55315,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "footer-class py-5"
+        className: "footer-class py-5 container-fluid"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "footer-title text-center py-2 "
       }, "Unifo"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -55423,7 +55366,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _components_About_About__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/About/About */ "./resources/js/components/About/About.js");
 /* harmony import */ var _components_Services_Services__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../components/Services/Services */ "./resources/js/components/Services/Services.js");
-/* harmony import */ var _components_Career_Career__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Career/Career */ "./resources/js/components/Career/Career.js");
+/* harmony import */ var _components_Portfolio_Portfolio__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/Portfolio/Portfolio */ "./resources/js/components/Portfolio/Portfolio.js");
 /* harmony import */ var _components_Products_Products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Products/Products */ "./resources/js/components/Products/Products.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -55490,8 +55433,8 @@ function (_Component) {
         className: "nav-item"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "navlink",
-        to: "/careers"
-      }, "Career \xA0 \xA0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        to: "/portfolio"
+      }, "Portfolio \xA0 \xA0")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "nav-item dropdown"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "navlink",
@@ -55504,6 +55447,10 @@ function (_Component) {
         exact: true,
         path: "/services",
         component: _components_Services_Services__WEBPACK_IMPORTED_MODULE_3__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/portfolio",
+        component: _components_Portfolio_Portfolio__WEBPACK_IMPORTED_MODULE_4__["default"]
       }));
     }
   }]);
@@ -55580,6 +55527,177 @@ function (_Component) {
 if (document.getElementById("index")) {
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Index, null), document.getElementById("index"));
 }
+
+/***/ }),
+
+/***/ "./resources/js/components/Portfolio/Portfolio.js":
+/*!********************************************************!*\
+  !*** ./resources/js/components/Portfolio/Portfolio.js ***!
+  \********************************************************/
+/*! exports provided: Portfolio, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Portfolio", function() { return Portfolio; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+var Portfolio =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(Portfolio, _Component);
+
+  function Portfolio() {
+    _classCallCheck(this, Portfolio);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Portfolio).apply(this, arguments));
+  }
+
+  _createClass(Portfolio, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "career container-fluid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: " text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "career-title"
+      }, " Portfolio"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "mx-auto heading-line"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "row"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 career-image "
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filter"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "school-uniform-girls ",
+        src: "/images/school-uniform1.jpg",
+        alt: ""
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 image-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: "py-5 girls-uniform"
+      }, "Girls uniform"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/fb3.png ",
+        className: "facebook-logo",
+        alt: "fb"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/instagram.png",
+        className: "instagram-logo",
+        alt: "instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/twitter.png",
+        className: "twitter-logo",
+        alt: "twitter"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 career-image "
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filter"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "Pe-uniform-boys",
+        src: "/images/PE-uniform-boys.jpg",
+        alt: "PEboys"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 image-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: " text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: " py-5 PE-boys"
+      }, "PE uniform"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/fb3.png ",
+        className: "facebook-logo",
+        alt: "fb"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/instagram.png",
+        className: "instagram-logo",
+        alt: "instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/twitter.png",
+        className: "twitter-logo",
+        alt: "twitter"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 image-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: " py-5  rotc"
+      }, "Rotc Uniform"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/fb3.png ",
+        className: "facebook-logo",
+        alt: "fb"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/instagram.png",
+        className: "instagram-logo",
+        alt: "instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/twitter.png",
+        className: "twitter-logo",
+        alt: "twitter"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 career-image "
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filter"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "Rotc",
+        src: "/images/ROTC.jpg",
+        alt: "Rotc"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 image-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "text-center"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", {
+        className: " py-5 cheerdance-uniform"
+      }, "Cheerdance uniform"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/fb3.png ",
+        className: "facebook-logo",
+        alt: "fb"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/instagram.png",
+        className: "instagram-logo",
+        alt: "instagram"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "/images/twitter.png",
+        className: "twitter-logo",
+        alt: "twitter"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "col-lg-3 p-0 career-image "
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "filt    er"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "cheerdance",
+        src: "/images/Cheerdancegirls.jpg",
+        alt: "cheerdance"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "bottom-padding"
+      }));
+    }
+  }]);
+
+  return Portfolio;
+}(react__WEBPACK_IMPORTED_MODULE_0__["Component"]);
+/* harmony default export */ __webpack_exports__["default"] = (Portfolio);
 
 /***/ }),
 
