@@ -55451,6 +55451,10 @@ function (_Component) {
         exact: true,
         path: "/portfolio",
         component: _components_Portfolio_Portfolio__WEBPACK_IMPORTED_MODULE_4__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/products",
+        component: _components_Products_Products__WEBPACK_IMPORTED_MODULE_5__["default"]
       }));
     }
   }]);
