@@ -16,4 +16,6 @@ Route::get('/', function () {
 });
 
 
-Route::get('/products', 'Category@index');
+Route::get('/hellos', function(){
+    return 'Hello';
+});
