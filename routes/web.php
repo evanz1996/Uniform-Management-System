@@ -16,6 +16,4 @@ Route::get('/', function () {
 });
 
 
-Route::get('/hellos', function(){
-    return 'Hello';
-});
+Route::get('/products','Api\CategoryController@index');

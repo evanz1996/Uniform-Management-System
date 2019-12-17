@@ -16,10 +16,12 @@ class CreateCategories extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->double('amount', 8, 2);
+            $table->double('quantity', 8, 2);
             $table->float('price', 8, 2);
+            $table->string('Images');
             $table->date('created_at');
             $table->integer('active')->default(1);
+           
         });
     }
 
