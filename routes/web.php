@@ -17,3 +17,5 @@ Route::get('/', function () {
 
 
 Route::get('/products','Api\CategoryController@index');
+
+Route::get('/products/store','Api\CategoryController@store');

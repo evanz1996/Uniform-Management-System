@@ -55716,7 +55716,13 @@ function (_Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
@@ -55728,13 +55734,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -55750,61 +55757,90 @@ function (_Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddProduct).call(this));
     _this.state = {
-      category_name: "",
-      category_price: "",
-      category_quantity: "",
-      category_images: ""
+      category_information: {
+        category_name: "",
+        category_price: "",
+        category_quantity: "",
+        category_images: ""
+      }
     };
+    _this.onChangeCategoryHandler = _this.onChangeCategoryHandler.bind(_assertThisInitialized(_this));
+    _this.onSubmitCategoryHandler = _this.onSubmitCategoryHandler.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(AddProduct, [{
-    key: "changeHandler",
-    value: function changeHandler(e) {
-      this.setState(_defineProperty({}, e.target.name, e.target.value));
+    key: "onChangeCategoryHandler",
+    value: function onChangeCategoryHandler(e) {
+      var _e$target = e.target,
+          name = _e$target.name,
+          value = _e$target.value;
+
+      var newCategoryInformation = _objectSpread({}, this.state.category_information, _defineProperty({}, name, value));
+
+      this.setState({
+        category_information: newCategoryInformation
+      });
+      console.log(name);
+    }
+  }, {
+    key: "onSubmitCategoryHandler",
+    value: function onSubmitCategoryHandler(e) {
+      e.preventDefault();
+      console.log(this.state.category_information);
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/api/products/store", {
+        newCategoryInformation: this.state.category_information
+      }).then(function (response) {
+        return console.log(response);
+      });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this$state = this.state,
-          category_name = _this$state.category_name,
-          category_price = _this$state.category_price,
-          category_quantity = _this$state.category_quantity,
-          category_images = _this$state.category_images;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "AddProduct"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.onSubmitCategoryHandler
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "category_name",
+        name: "category_name" // value={this.state.category_name}
+        ,
         type: "text",
         className: "form-control",
         id: "category_name",
-        onChange: this.changeHandler
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        onChange: this.onChangeCategoryHandler,
+        onSubmit: this.onSubmitCategoryHandler
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "category_price",
+        value: this.state.category_price,
         type: "text",
         className: "form-control",
         id: "category_price",
-        onChange: this.changeHandler
+        onChange: this.onChangeCategoryHandler,
+        onSubmit: this.onSubmitCategoryHandler
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Quantity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "category_quantity",
+        value: this.state.category_quantity,
         type: "text",
         className: "form-control",
         id: "category_quantity",
-        onChange: this.changeHandler
+        onChange: this.onChangeCategoryHandler,
+        onSubmit: this.onSubmitCategoryHandler
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Upload Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "category_images",
+        value: this.state.category_images,
         type: "text",
         className: "form-control",
         id: "category_images",
-        onChange: this.changeHandler
+        onChange: this.onChangeCategoryHandler,
+        onSubmit: this.onSubmitCategoryHandler
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary "
