@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import AddProduct from "../Products/AddProduct";
-import ViewProducts from "./ViewProducts";
+import ListsofProducts from "./ListsofProducts";
 
 export class Products extends Component {
     render() {
@@ -9,16 +9,16 @@ export class Products extends Component {
             <Router>
                 <div className="products-area">
                     <ul className="nav nav-tabs">
-                        <li className="nav-item">
-                            <Link className="nav-link active" to="/addProduct">
-                                Add Products{" "}
-                                <span className="sr-only">(current)</span>
+                        <li className="nav-item active">
+                            <Link className="nav-link active " to="/addProduct">
+                                Add Products
+                                
                             </Link>
                         </li>
                         <li className="nav-item">
                             <Link
                                 className="nav-link active"
-                                to="/viewProducts"
+                                to="/listsOfProducts"
                             >
                                 Lists of Products
                             </Link>
@@ -27,8 +27,8 @@ export class Products extends Component {
                     <Route exact path="/addProduct" component={AddProduct} />
                     <Route
                         exact
-                        path="/viewProducts"
-                        component={ViewProducts}
+                        path="/listsOfProducts"
+                        component={ListsofProducts}
                     />
                 </div>
             </Router>
