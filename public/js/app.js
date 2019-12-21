@@ -49518,7 +49518,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
+/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55758,10 +55758,10 @@ function (_Component) {
     _this = _possibleConstructorReturn(this, _getPrototypeOf(AddProduct).call(this));
     _this.state = {
       category_information: {
-        category_name: "",
-        category_price: "",
-        category_quantity: "",
-        category_images: ""
+        name: "",
+        price: "",
+        quantity: "",
+        images: ""
       }
     };
     _this.onChangeCategoryHandler = _this.onChangeCategoryHandler.bind(_assertThisInitialized(_this));
@@ -55772,25 +55772,22 @@ function (_Component) {
   _createClass(AddProduct, [{
     key: "onChangeCategoryHandler",
     value: function onChangeCategoryHandler(e) {
-      var _e$target = e.target,
-          name = _e$target.name,
-          value = _e$target.value;
+      var value = e.target.value;
 
-      var newCategoryInformation = _objectSpread({}, this.state.category_information, _defineProperty({}, name, value));
+      var newCategoryInformation = _objectSpread({}, this.state.category_information, _defineProperty({}, e.target.name, value));
 
       this.setState({
         category_information: newCategoryInformation
       });
-      console.log(name);
+      console.log(this.state);
     }
   }, {
     key: "onSubmitCategoryHandler",
     value: function onSubmitCategoryHandler(e) {
       e.preventDefault();
       console.log(this.state.category_information);
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/api/products/store", {
-        newCategoryInformation: this.state.category_information
-      }).then(function (response) {
+      var categoryInformation = this.state.category_information;
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/api/products/store", categoryInformation).then(function (response) {
         return console.log(response);
       });
     }
@@ -55804,8 +55801,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "category_name" // value={this.state.category_name}
-        ,
+        name: "name",
+        value: this.state.category_name,
         type: "text",
         className: "form-control",
         id: "category_name",
@@ -55814,8 +55811,8 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "category_price",
-        value: this.state.category_price,
+        name: "price" // value={this.state.category_price}
+        ,
         type: "text",
         className: "form-control",
         id: "category_price",
@@ -55824,8 +55821,8 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Quantity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "category_quantity",
-        value: this.state.category_quantity,
+        name: "quantity" // value={this.state.category_quantity}
+        ,
         type: "text",
         className: "form-control",
         id: "category_quantity",
@@ -55834,8 +55831,8 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Upload Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "category_images",
-        value: this.state.category_images,
+        name: "images" // value={this.state.category_images}
+        ,
         type: "text",
         className: "form-control",
         id: "category_images",

@@ -7,10 +7,10 @@ class AddProduct extends Component {
         super();
         this.state = {
             category_information: {
-                category_name: "",
-                category_price: "",
-                category_quantity: "",
-                category_images: ""
+                name: "",
+                price: "",
+                quantity: "",
+                images: ""
             }
         };
         this.onChangeCategoryHandler = this.onChangeCategoryHandler.bind(this);
@@ -18,25 +18,29 @@ class AddProduct extends Component {
     }
 
     onChangeCategoryHandler(e) {
-        const { name, value } = e.target;
-
+        const { value } = e.target;
         let newCategoryInformation = {
             ...this.state.category_information,
-            [name]: value
+            [e.target.name]: value
         };
 
-        this.setState({ category_information: newCategoryInformation });
-        console.log(name);
+        this.setState({
+            category_information: newCategoryInformation
+        });
+        console.log(this.state);
     }
 
     onSubmitCategoryHandler(e) {
         e.preventDefault();
         console.log(this.state.category_information);
 
+        let categoryInformation = this.state.category_information;
+
         axios
-            .post("http://127.0.0.1:8000/api/products/store", {
-                newCategoryInformation: this.state.category_information
-            })
+            .post(
+                "http://127.0.0.1:8000/api/products/store",
+                categoryInformation
+            )
             .then(response => console.log(response));
     }
 
@@ -47,8 +51,8 @@ class AddProduct extends Component {
                     <div className="form-group">
                         <label> Category Name</label>
                         <input
-                            name="category_name"
-                            // value={this.state.category_name}
+                            name="name"
+                            value={this.state.category_name}
                             type="text"
                             className="form-control"
                             id="category_name"
@@ -60,8 +64,8 @@ class AddProduct extends Component {
                     <div className="form-group on">
                         <label> Price</label>
                         <input
-                            name="category_price"
-                            value={this.state.category_price}
+                            name="price"
+                            // value={this.state.category_price}
                             type="text"
                             className="form-control"
                             id="category_price"
@@ -72,8 +76,8 @@ class AddProduct extends Component {
                     <div className="form-group">
                         <label> Quantity</label>
                         <input
-                            name="category_quantity"
-                            value={this.state.category_quantity}
+                            name="quantity"
+                            // value={this.state.category_quantity}
                             type="text"
                             className="form-control"
                             id="category_quantity"
@@ -85,8 +89,8 @@ class AddProduct extends Component {
                     <div className="form-group">
                         <label> Upload Image</label>
                         <input
-                            name="category_images"
-                            value={this.state.category_images}
+                            name="images"
+                            // value={this.state.category_images}
                             type="text"
                             className="form-control"
                             id="category_images"

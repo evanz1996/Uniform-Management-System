@@ -16,13 +16,18 @@ class CategoryController extends Controller
 
  public function store( Request $request)
  {
-    $newCategoryInformation = new category_information();
 
-    $newCategoryInformation->name = $request-> newCategoryInformation['name'];
-    $newCategoryInformation->quantity = $request-> newCategoryInformation['quantity'];
-    $newCategoryInformation->price = $request-> newCategoryInformation['price'];
+    
+//    //model
+//     $category = new Category([
+//         'name' => $request-> get('name')
+//     ]);
+    return response()->json(['test'=>$request->categoryInformation->name]);
+//                 //Database                          //input fields
+    
+//     // $newCategoryInformation = new category_information();
 
-    $newCategoryInformation->save();
-    return response()->json(['newCategoryInfo'=>$request->all()]);
- }
+
+
+}
 }
