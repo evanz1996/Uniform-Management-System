@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 import axios from "axios";
 
 class AddProduct extends Component {
@@ -52,7 +51,7 @@ class AddProduct extends Component {
                         <label> Category Name</label>
                         <input
                             name="name"
-                            value={this.state.category_name}
+                            // value={this.state.category_name}
                             type="text"
                             className="form-control"
                             id="category_name"

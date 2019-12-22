@@ -55801,8 +55801,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "name",
-        value: this.state.category_name,
+        name: "name" // value={this.state.category_name}
+        ,
         type: "text",
         className: "form-control",
         id: "category_name",
@@ -55865,6 +55865,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55882,6 +55883,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -55915,8 +55917,17 @@ function (_Component) {
       });
     }
   }, {
+    key: "onDelete",
+    value: function onDelete(category_id) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("http://127.0.0.1:8000/products/delete/" + category_id).then(function (response) {
+        console.log("deleted");
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lists-of-products"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -55937,10 +55948,17 @@ function (_Component) {
         scope: "col"
       }, "Images"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
         scope: "col"
-      }, "Created At"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.categories.map(function (category) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+      }, "Created At"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
+        scope: "col"
+      }, "Actions"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tbody", null, this.state.categories.map(function (category) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("tr", {
+          key: category.id
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("th", {
           scope: "row"
-        }, category.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.images), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.created_at));
+        }, category.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.images), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.created_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          type: "button",
+          onClick: _this3.onDelete.bind(_this3, category.id)
+        }, "Delete")));
       })))));
     }
   }]);

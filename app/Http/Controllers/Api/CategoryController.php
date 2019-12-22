@@ -17,16 +17,22 @@ class CategoryController extends Controller
  public function store( Request $request)
  {
 
-    
+    return response()->json(['test'=>$request->categoryInformation->name]); 
 //    //model
 //     $category = new Category([
 //         'name' => $request-> get('name')
 //     ]);
-    return response()->json(['test'=>$request->categoryInformation->name]);
-//                 //Database                          //input fields
-    
+  
+//                 //Database                          //input fields 
 //     // $newCategoryInformation = new category_information();
 
+
+
+}
+public function destroy($id){
+                //model
+    $category = Category::find($id);
+    $category->delete();
 
 
 }

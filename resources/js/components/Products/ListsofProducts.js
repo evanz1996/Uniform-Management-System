@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 
 class ListsofProducts extends Component {
     constructor() {
@@ -13,6 +14,14 @@ class ListsofProducts extends Component {
         axios.get("http://127.0.0.1:8000/products").then(response => {
             this.setState({ categories: response.data });
         });
+    }
+
+    onDelete(category_id) {
+        axios
+            .delete("http://127.0.0.1:8000/products/delete/" + category_id)
+            .then(response => {
+                console.log("deleted");
+            });
     }
     render() {
         return (
@@ -31,18 +40,30 @@ class ListsofProducts extends Component {
                                 <th scope="col">Price</th>
                                 <th scope="col">Images</th>
                                 <th scope="col">Created At</th>
+                                <th scope="col">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
                             {this.state.categories.map(category => {
                                 return (
-                                    <tr>
+                                    <tr key={category.id}>
                                         <th scope="row">{category.id}</th>
                                         <td>{category.name}</td>
                                         <td>{category.quantity}</td>
                                         <td>{category.price}</td>
                                         <td>{category.images}</td>
                                         <td>{category.created_at}</td>
+                                        <td>
+                                            <button
+                                                type="button"
+                                                onClick={this.onDelete.bind(
+                                                    this,
+                                                    category.id
+                                                )}
+                                            >
+                                                Delete
+                                            </button>
+                                        </td>
                                     </tr>
                                 );
                             })}
