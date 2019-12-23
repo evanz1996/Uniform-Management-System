@@ -12,7 +12,7 @@ class ListsofProducts extends Component {
 
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/products").then(response => {
-            // this.setState({ categories: response.data });
+            this.setState({ categories: response.data.category });
             console.log(response);
         });
     }
@@ -21,10 +21,15 @@ class ListsofProducts extends Component {
         axios
             .delete("http://127.0.0.1:8000/products/delete/" + category_id)
             .then(response => {
-                console.log("deleted");
+                console.log(category_id);
                 var categories = this.state.categories;
 
-                // for (var i)
+                for (var i = 0; i < categories.length; i++) {
+                    if (categories[i].id == category_id) {
+                        categories.splice(i, 1);
+                        this.setState({ categories: categories });
+                    }
+                }
             });
     }
     render() {

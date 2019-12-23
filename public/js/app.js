@@ -49518,7 +49518,7 @@ if (false) {} else {
 /*!***************************************************************!*\
   !*** ./node_modules/react-router-dom/esm/react-router-dom.js ***!
   \***************************************************************/
-/*! exports provided: BrowserRouter, HashRouter, Link, NavLink, MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter */
+/*! exports provided: MemoryRouter, Prompt, Redirect, Route, Router, StaticRouter, Switch, __RouterContext, generatePath, matchPath, useHistory, useLocation, useParams, useRouteMatch, withRouter, BrowserRouter, HashRouter, Link, NavLink */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -55908,25 +55908,40 @@ function (_Component) {
   _createClass(ListsofProducts, [{
     key: "componentDidMount",
     value: function componentDidMount() {
+      var _this2 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://127.0.0.1:8000/products").then(function (response) {
-        // this.setState({ categories: response.data });
+        _this2.setState({
+          categories: response.data.category
+        });
+
         console.log(response);
       });
     }
   }, {
     key: "onDelete",
     value: function onDelete(category_id) {
-      var _this2 = this;
+      var _this3 = this;
 
       axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("http://127.0.0.1:8000/products/delete/" + category_id).then(function (response) {
-        console.log("deleted");
-        var categories = _this2.state.categories; // for (var i)
+        console.log(category_id);
+        var categories = _this3.state.categories;
+
+        for (var i = 0; i < categories.length; i++) {
+          if (categories[i].id == category_id) {
+            categories.splice(i, 1);
+
+            _this3.setState({
+              categories: categories
+            });
+          }
+        }
       });
     }
   }, {
     key: "render",
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "lists-of-products"
@@ -55957,7 +55972,7 @@ function (_Component) {
           scope: "row"
         }, category.id), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.quantity), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.price), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.images), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, category.created_at), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("td", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           type: "button",
-          onClick: _this3.onDelete.bind(_this3, category.id)
+          onClick: _this4.onDelete.bind(_this4, category.id)
         }, "Delete")));
       })))));
     }
