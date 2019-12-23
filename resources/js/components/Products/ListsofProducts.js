@@ -12,7 +12,8 @@ class ListsofProducts extends Component {
 
     componentDidMount() {
         axios.get("http://127.0.0.1:8000/products").then(response => {
-            this.setState({ categories: response.data });
+            // this.setState({ categories: response.data });
+            console.log(response);
         });
     }
 
@@ -21,6 +22,9 @@ class ListsofProducts extends Component {
             .delete("http://127.0.0.1:8000/products/delete/" + category_id)
             .then(response => {
                 console.log("deleted");
+                var categories = this.state.categories;
+
+                // for (var i)
             });
     }
     render() {

@@ -55787,7 +55787,7 @@ function (_Component) {
       e.preventDefault();
       console.log(this.state.category_information);
       var categoryInformation = this.state.category_information;
-      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/api/products/store", categoryInformation).then(function (response) {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.post("http://127.0.0.1:8000/products/store", categoryInformation).then(function (response) {
         return console.log(response);
       });
     }
@@ -55801,8 +55801,8 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "name" // value={this.state.category_name}
-        ,
+        name: "name",
+        value: this.state.name,
         type: "text",
         className: "form-control",
         id: "category_name",
@@ -55908,19 +55908,19 @@ function (_Component) {
   _createClass(ListsofProducts, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      var _this2 = this;
-
       axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://127.0.0.1:8000/products").then(function (response) {
-        _this2.setState({
-          categories: response.data
-        });
+        // this.setState({ categories: response.data });
+        console.log(response);
       });
     }
   }, {
     key: "onDelete",
     value: function onDelete(category_id) {
+      var _this2 = this;
+
       axios__WEBPACK_IMPORTED_MODULE_1___default.a["delete"]("http://127.0.0.1:8000/products/delete/" + category_id).then(function (response) {
         console.log("deleted");
+        var categories = _this2.state.categories; // for (var i)
       });
     }
   }, {

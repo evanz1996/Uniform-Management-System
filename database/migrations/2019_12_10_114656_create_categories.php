@@ -19,8 +19,8 @@ class CreateCategories extends Migration
             $table->double('quantity', 8, 2);
             $table->float('price', 8, 2);
             $table->string('Images');
-            $table->date('created_at');
             $table->integer('active')->default(1);
+            $table->timestamps();
            
         });
     }

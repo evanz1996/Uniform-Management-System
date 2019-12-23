@@ -10,22 +10,24 @@ class CategoryController extends Controller
 {
  public function index()
  {
-     $result = Category::all();
-     return $result ;
+     $category = Category::all();
+     return response()->json(['category'=>$category]);
  }
 
  public function store( Request $request)
  {
-
-    return response()->json(['test'=>$request->categoryInformation->name]); 
-//    //model
-//     $category = new Category([
-//         'name' => $request-> get('name')
-//     ]);
-  
-//                 //Database                          //input fields 
-//     // $newCategoryInformation = new category_information();
-
+    //create new Category instance
+    $category = new Category();
+    //Put request to new category instance
+                //db            //input fields
+    $category->name = $request->name;
+    $category->quantity = $request->quantity;
+    $category->price = $request->price;
+    $category->Images = $request->images;
+    //save category instance
+    $category->save();
+    //return newly created category instance
+    return response()->json(['new_category'=>$category]); 
 
 
 }

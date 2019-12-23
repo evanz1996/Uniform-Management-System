@@ -36,10 +36,7 @@ class AddProduct extends Component {
         let categoryInformation = this.state.category_information;
 
         axios
-            .post(
-                "http://127.0.0.1:8000/api/products/store",
-                categoryInformation
-            )
+            .post(`http://127.0.0.1:8000/products/store`, categoryInformation)
             .then(response => console.log(response));
     }
 
@@ -51,7 +48,7 @@ class AddProduct extends Component {
                         <label> Category Name</label>
                         <input
                             name="name"
-                            // value={this.state.category_name}
+                            value={this.state.name}
                             type="text"
                             className="form-control"
                             id="category_name"
