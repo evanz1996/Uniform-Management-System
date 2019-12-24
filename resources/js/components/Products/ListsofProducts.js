@@ -63,7 +63,16 @@ class ListsofProducts extends Component {
                                         <td>{category.images}</td>
                                         <td>{category.created_at}</td>
                                         <td>
+                                            <Link
+                                                type="button"
+                                                className="edit-button"
+                                                to={`/products/edit${category.id}`}
+                                            >
+                                                Edit
+                                            </Link>
+
                                             <button
+                                                className="delete-button"
                                                 type="button"
                                                 onClick={this.onDelete.bind(
                                                     this,

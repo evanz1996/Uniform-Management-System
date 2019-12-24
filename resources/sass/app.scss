@@ -128,7 +128,32 @@
 }
 
 .AddProduct {
-    padding-top: 5rem;
+    padding-top: 3rem;
     padding-left: 5rem;
     padding-right: 3rem;
+}
+//Edit Product
+.editProduct {
+    padding-top: 5rem;
+}
+
+//CRUD DESIGN
+.edit-button {
+    color: black;
+    background-color: #f44336;
+    color: white;
+    padding: 4.5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin-left: 5px;
+}
+.delete-button {
+    color: black;
+    background-color: #bf4040;
+    color: white;
+    padding: 4.5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }

@@ -8,7 +8,7 @@ export default class Index extends Component {
         return (
             <div>
                 <Header />
-                <Footer />
+                {/* <Footer /> */}
             </div>
         );
     }
