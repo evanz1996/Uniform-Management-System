@@ -38,4 +38,13 @@ public function destroy($id){
 
 
 }
+
+public function edit($id){
+
+    $category = Category::find($id);
+
+    $category->edit();
+    return response()->json(['updated'=>$category]);
+
+}
 }

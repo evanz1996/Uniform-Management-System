@@ -55370,6 +55370,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Products_Products__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/Products/Products */ "./resources/js/components/Products/Products.js");
 /* harmony import */ var _components_Products_EditProduct__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Products/EditProduct */ "./resources/js/components/Products/EditProduct.js");
 /* harmony import */ var _Products_ListsofProducts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Products/ListsofProducts */ "./resources/js/components/Products/ListsofProducts.js");
+/* harmony import */ var _Products_AddProduct__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Products/AddProduct */ "./resources/js/components/Products/AddProduct.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -55387,6 +55388,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
 
 
 
@@ -55458,7 +55460,11 @@ function (_Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: "/products",
-        component: _Products_ListsofProducts__WEBPACK_IMPORTED_MODULE_7__["default"]
+        component: _components_Products_Products__WEBPACK_IMPORTED_MODULE_5__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
+        path: "/products/add",
+        component: _Products_AddProduct__WEBPACK_IMPORTED_MODULE_8__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         exact: true,
         path: "/products/edit:id",
@@ -55804,7 +55810,7 @@ function (_Component) {
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "AddProduct"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, " Add product"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.onSubmitCategoryHandler
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
@@ -55873,6 +55879,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
@@ -55900,17 +55907,18 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var EditProduct =
 /*#__PURE__*/
 function (_Component) {
   _inherits(EditProduct, _Component);
 
-  function EditProduct() {
+  function EditProduct(props) {
     var _this;
 
     _classCallCheck(this, EditProduct);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditProduct).call(this));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditProduct).call(this, props));
     _this.state = {
       category_information: {
         name: "",
@@ -55925,6 +55933,13 @@ function (_Component) {
   }
 
   _createClass(EditProduct, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      axios__WEBPACK_IMPORTED_MODULE_1___default.a.get("http://127.0.0.1:8000/products/edit/" + this.props.match.params.id).then(function (response) {
+        return console.log(response);
+      });
+    }
+  }, {
     key: "onChangeCategoryHandler",
     value: function onChangeCategoryHandler(e) {
       var value = e.target.value;
@@ -55949,15 +55964,17 @@ function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["BrowserRouter"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "editProduct"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+        className: "back-buttons",
+        to: "/products"
+      }, "Back"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, " Update product"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.onSubmitCategoryHandler
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Category Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         name: "name",
-        value: this.state.name,
         type: "text",
         className: "form-control",
         id: "category_name",
@@ -55966,8 +55983,7 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group on"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Price"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "price" // value={this.state.category_price}
-        ,
+        name: "price",
         type: "text",
         className: "form-control",
         id: "category_price",
@@ -55976,8 +55992,7 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Quantity"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "quantity" // value={this.state.category_quantity}
-        ,
+        name: "quantity",
         type: "text",
         className: "form-control",
         id: "category_quantity",
@@ -55986,8 +56001,7 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "form-group"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, " Upload Image"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        name: "images" // value={this.state.category_images}
-        ,
+        name: "images",
         type: "text",
         className: "form-control",
         id: "category_images",
@@ -55996,7 +56010,7 @@ function (_Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         type: "submit",
         className: "btn btn-primary "
-      }, "submit")));
+      }, "submit"))));
     }
   }]);
 
@@ -56129,7 +56143,7 @@ function (_Component) {
           type: "button",
           className: "edit-button",
           to: "/products/edit".concat(category.id)
-        }, "Edit"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        }, "Edit"), "\xA0", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
           className: "delete-button",
           type: "button",
           onClick: _this4.onDelete.bind(_this4, category.id)
@@ -56221,9 +56235,16 @@ function (_Component) {
         //         />
         //     </div>
         // </Router>
+        // <div className="products-area">
+        //     {/* <button> Add</button> */}
+        // </div>
         react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "products-area"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, " Add"))
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          className: "add-Product-link",
+          type: "button",
+          to: "/products/add"
+        }, "Add Category"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_ListsofProducts__WEBPACK_IMPORTED_MODULE_3__["default"], null))
       );
     }
   }]);

@@ -70,7 +70,7 @@ class ListsofProducts extends Component {
                                             >
                                                 Edit
                                             </Link>
-
+                                            &nbsp;
                                             <button
                                                 className="delete-button"
                                                 type="button"

@@ -18,6 +18,8 @@ Route::get('/', function () {
 
 Route::get('/products','Api\CategoryController@index');
 Route::post('/products/store','Api\CategoryController@store');
-Route::delete('/products/delete/{id}','Api\CategoryController@destroy');
+Route::delete('/products/delete/{id}','Api\CategoryController@destroy'); 
+Route::get('/products/edit/{id}','Api\CategoryController@edit'); 
+
 
 // Route::resource('/api/produts', 'Api\CategoryController');

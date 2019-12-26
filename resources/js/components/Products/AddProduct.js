@@ -43,6 +43,8 @@ class AddProduct extends Component {
     render() {
         return (
             <div className="AddProduct">
+                <h2> Add product</h2>
+
                 <form onSubmit={this.onSubmitCategoryHandler}>
                     <div className="form-group">
                         <label> Category Name</label>

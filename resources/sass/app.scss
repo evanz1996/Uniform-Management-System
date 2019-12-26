@@ -128,32 +128,61 @@
 }
 
 .AddProduct {
-    padding-top: 3rem;
+    padding-top: 6rem;
     padding-left: 5rem;
-    padding-right: 3rem;
+    padding-right: 5rem;
+}
+.add-Product-link {
+    color: black;
+    background-color: #388e3c;
+    padding: 4.5px 10px;
+    text-align: center;
+    text-decoration: none !important;
+    display: inline-block;
+    border: 1px solid black;
+    margin-left: 75rem;
+    border-radius: 0.5rem;
 }
 //Edit Product
 .editProduct {
     padding-top: 5rem;
+    padding-left: 5rem;
+    padding-right: 5rem;
 }
 
 //CRUD DESIGN
 .edit-button {
     color: black;
-    background-color: #f44336;
-    color: white;
+    background-color: #ffb74d;
+
     padding: 4.5px 10px;
     text-align: center;
-    text-decoration: none;
+    text-decoration: none !important;
     display: inline-block;
+    border: 1px solid black;
     margin-left: 5px;
+    border-radius: 0.5rem;
 }
 .delete-button {
     color: black;
     background-color: #bf4040;
-    color: white;
+
     padding: 4.5px 10px;
     text-align: center;
     text-decoration: none;
+    border: 1px solid black;
     display: inline-block;
+    border-radius: 0.5rem;
+}
+//Buttons
+.back-buttons {
+    color: black;
+    background-color: #2d5186;
+
+    padding: 4.5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border: 1px solid black;
+    display: inline-block;
+    border-radius: 0.5rem;
 }

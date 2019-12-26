@@ -6,6 +6,7 @@ import Portfolio from "../components/Portfolio/Portfolio";
 import Products from "../components/Products/Products";
 import EditProduct from "../components/Products/EditProduct";
 import ListsofProducts from "./Products/ListsofProducts";
+import AddProduct from "./Products/AddProduct";
 
 class Header extends Component {
     render() {
@@ -48,7 +49,8 @@ class Header extends Component {
                 <Route exact path="/" component={About} />
                 <Route exact path="/services" component={Services} />
                 <Route exact path="/portfolio" component={Portfolio} />
-                <Route exact path="/products" component={ListsofProducts} />
+                <Route exact path="/products" component={Products} />
+                <Route exact path="/products/add" component={AddProduct} />
                 <Route exact path="/products/edit:id" component={EditProduct} />
             </Router>
         );

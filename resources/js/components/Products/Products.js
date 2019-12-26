@@ -31,8 +31,20 @@ export class Products extends Component {
             //         />
             //     </div>
             // </Router>
+            // <div className="products-area">
+            //     {/* <button> Add</button> */}
+            // </div>
+
             <div className="products-area">
-                <button> Add</button>
+                <Link
+                    className="add-Product-link"
+                    type="button"
+                    to="/products/add"
+                >
+                    Add Category
+                </Link>
+
+                <ListsofProducts />
             </div>
         );
     }
