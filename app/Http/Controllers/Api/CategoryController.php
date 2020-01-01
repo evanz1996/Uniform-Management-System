@@ -43,8 +43,9 @@ public function edit($id){
 
     $category = Category::find($id);
 
-    $category->edit();
-    return response()->json(['updated'=>$category]);
+    // $category->edit();
+    return response()->json(['category'=>$category]);
 
+    // return response()->json(['test'=>'test']);
 }
 }

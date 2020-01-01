@@ -24,7 +24,14 @@ class EditProduct extends Component {
                     this.props.match.params.id
             )
 
-            .then(response => console.log(response));
+            // .then(response => console.log(response));
+            .then(
+                response =>
+                    this.setState({
+                        category_information: [response.data.category]
+                    })
+                // console.log(response.data.category)
+            );
     }
 
     onChangeCategoryHandler(e) {
