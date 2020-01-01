@@ -238,7 +238,7 @@ a {
   background-color: #2d5186;
   padding: 4.5px 10px;
   text-align: center;
-  text-decoration: none;
+  text-decoration: none !important;
   border: 1px solid black;
   display: inline-block;
   border-radius: 0.5rem;
