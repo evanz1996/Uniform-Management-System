@@ -1,6 +1,8 @@
 <h2>i'm customer </h2>
 
 <a href="/customers/create">Add a new Customer</a>
+<a href="/customers?active=1"> Active Customer</a>
+<a href="/customers?active=0"> Inactive Customer</a>
 
 @forelse($customers as $customerID)
 

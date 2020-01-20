@@ -9,11 +9,13 @@
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
-
-Route::get('/', function () {
-    return view('welcome');
-});
+// */
+// use Illuminate\Support\Facades\Mail;
+// use App\Mail\WelcomeMail;
+// Route::get('/email', function () {
+//     Mail::to('email@email.com')->send(new WelcomeMail());
+//     return new WelcomeMail();
+// });
 
 
 Route::get('/products','Api\CategoryController@index');
